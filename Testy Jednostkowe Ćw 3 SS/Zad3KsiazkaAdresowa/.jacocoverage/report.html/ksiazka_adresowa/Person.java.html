@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pl"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>Person.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;Ksiazka_Adresowa&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">ksiazka_adresowa</a> &gt; <span class="el_source">Person.java</span></div><h1>Person.java</h1><pre class="source lang-java linenums">/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package ksiazka_adresowa;
+
+import java.util.Date;
+
+/**
+ *
+ * @author Seweryn
+ */
+public class Person implements Comparable&lt;Person&gt;{
+    String Imie;
+    String Nazwisko;
+    String Ulica;
+    String Numer_Domu;
+    String Miasto;
+    String Kod_Pocztowy;
+    String Telefon;
+    
+    
+<span class="fc" id="L24">    public Person(String Imie, String Nazwisko, String Ulica, String Numer_Domu, String Miasto, String Kod_Pocztowy, String Telefon){</span>
+<span class="fc" id="L25">    this.Imie = Imie;</span>
+<span class="fc" id="L26">    this.Nazwisko = Nazwisko;</span>
+<span class="fc" id="L27">    this.Ulica = Ulica;</span>
+<span class="fc" id="L28">    this.Numer_Domu = Numer_Domu;</span>
+<span class="fc" id="L29">    this.Miasto = Miasto;</span>
+<span class="fc" id="L30">    this.Kod_Pocztowy = Kod_Pocztowy;</span>
+<span class="fc" id="L31">    this.Telefon = Telefon;</span>
+    
+<span class="fc" id="L33">    }</span>
+    
+   
+    //@Override
+    //public int compareTo(Object obj) {
+    //    throw new UnsupportedOperationException(&quot;Not supported yet.&quot;); //To change body of generated methods, choose Tools | Templates.
+    //Date Data_urodzenia = ((Person) obj).getData_urodzenia();
+    //    return (this.Data_urodzenia.compareTo(Data_urodzenia));
+    //
+    //}
+    
+    public String toString() {
+<span class="fc" id="L45">        return &quot;Nazwisko: &quot; +Nazwisko + &quot; Imie: &quot; + Imie+&quot;, Adres: &quot; + Ulica + &quot; &quot; + Numer_Domu + &quot;, &quot; + Kod_Pocztowy + &quot; &quot; + Miasto + &quot;, Tel: &quot; + Telefon;</span>
+    }
+    
+    
+    @Override
+    public int compareTo(Person o) {
+<span class="fc" id="L51">        int porownaneNazwiska = Nazwisko.compareTo(o.Nazwisko);</span>
+ 
+<span class="pc bpc" id="L53" title="1 of 2 branches missed.">        if(porownaneNazwiska == 0) {</span>
+<span class="nc" id="L54">            return Imie.compareTo(o.Imie);</span>
+        }
+        else {
+<span class="fc" id="L57">            return porownaneNazwiska;</span>
+        }
+    }
+    //Wywołanie: Collections.sort(people)
+    
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.5.201505241946</span></div></body></html>
